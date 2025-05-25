@@ -7,7 +7,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
-  category: 'web' | 'mobile' | 'design' | 'other';
+  category: 'web' | 'mobile' | 'design' | 'other' | 'crome extension';
   year: number;
 }
 

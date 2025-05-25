@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Harsh Rawat',
   description:
-    'Personal portfolio of John Doe - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+    'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
   keywords: [
     'Full Stack Developer',
     'React',
@@ -31,17 +31,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Harsh Rawat' }],
   openGraph: {
-    title: 'Harsh Rawat | Full Stack Developer',
+    title: 'Harsh Rawat',
     description:
-      'Personal portfolio of Harsh Rawat - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+      'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harsh Rawat | Full Stack Developer',
+    title: 'Harsh Rawat',
     description:
-      'Personal portfolio of Harsh Rawat - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+      'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
   },
 };
 

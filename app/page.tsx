@@ -250,7 +250,7 @@ export default function HomePage() {
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className='card hover:scale-[1.02] group'
+                className='card hover:scale-[1.02] group relative'
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
@@ -266,13 +266,13 @@ export default function HomePage() {
                 </motion.div>
 
                 <div className='mb-4'>
-                  <Image
+                  {/* <Image
                     src={project.image}
                     alt={project.title}
                     width={600}
                     height={300}
                     className='w-full h-48 object-cover rounded-md mb-4'
-                  />
+                  /> */}
                 </div>
 
                 <motion.div
@@ -391,7 +391,7 @@ export default function HomePage() {
               transition={{ delay: 1.7 }}
             >
               <Link
-                href='/projects'
+                href='https://github.com/Harshrawat27'
                 className='inline-flex items-center justify-center px-4 py-2 border border-[var(--card-border)] rounded-lg text-sm text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-colors group'
               >
                 <span>View All Projects</span>
@@ -413,7 +413,7 @@ export default function HomePage() {
         </motion.div>
 
         {/* Quick Access Section */}
-        <motion.div
+        {/* <motion.div
           className='w-full'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -503,7 +503,7 @@ export default function HomePage() {
               </p>
             </Link>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );

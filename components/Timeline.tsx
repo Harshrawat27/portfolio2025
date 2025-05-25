@@ -26,12 +26,12 @@ const defaultItems: TimelineItem[] = [
   },
   {
     period: '2023 - 2024',
-    description: 'Freelancer as web designer',
+    description: 'Freelancer as web developer',
     icon: '🚀',
   },
   {
     period: '2025 - forever',
-    description: 'On a path of doing great work',
+    description: 'On a path to doing great work',
     icon: '✨',
   },
 ];
