@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'John Doe | Full Stack Developer',
+  title: 'Harsh Rawat',
   description:
     'Personal portfolio of John Doe - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
   keywords: [
@@ -29,19 +29,19 @@ export const metadata: Metadata = {
     'TypeScript',
     'Web Development',
   ],
-  authors: [{ name: 'John Doe' }],
+  authors: [{ name: 'Harsh Rawat' }],
   openGraph: {
-    title: 'John Doe | Full Stack Developer',
+    title: 'Harsh Rawat | Full Stack Developer',
     description:
-      'Personal portfolio of John Doe - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+      'Personal portfolio of Harsh Rawat - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'John Doe | Full Stack Developer',
+    title: 'Harsh Rawat | Full Stack Developer',
     description:
-      'Personal portfolio of John Doe - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+      'Personal portfolio of Harsh Rawat - Full Stack Developer specializing in React, Node.js, and modern web technologies.',
   },
 };
 

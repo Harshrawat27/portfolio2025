@@ -60,7 +60,7 @@ export default function SideNav() {
       type: 'link',
     },
     {
-      href: 'https://github.com/johndoe',
+      href: 'https://github.com/Harshrawat27',
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -76,7 +76,7 @@ export default function SideNav() {
       type: 'external',
     },
     {
-      href: 'https://twitter.com/johndoe',
+      href: 'https://x.com/Harshrwt27',
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -92,7 +92,7 @@ export default function SideNav() {
       type: 'external',
     },
     {
-      href: 'mailto:john.doe@example.com',
+      href: 'mailto:harshrawat.dev@gmail.com',
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'

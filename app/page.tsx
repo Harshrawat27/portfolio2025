@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SideNav from '@/components/SideNav';
 import { personalInfo, projects, skills } from '@/data/portfolio';
+import Timeline from '@/components/Timeline';
 
 export default function HomePage() {
   const featuredProjects = projects.filter((project) => project.featured);
@@ -232,6 +233,8 @@ export default function HomePage() {
             #01
           </motion.div>
         </motion.div>
+
+        <Timeline title='My Journey' />
 
         {/* Featured Projects Section */}
         <motion.div

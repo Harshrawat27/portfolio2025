@@ -1,18 +1,17 @@
 import { PersonalInfo, Project, Experience, Skill, BlogPost } from '../types';
 
 export const personalInfo: PersonalInfo = {
-  name: 'John Doe',
-  title: 'Full Stack Developer',
+  name: 'Harsh Rawat',
+  title: 'Problem Solver',
   bio: 'Passionate developer with 5+ years of experience building modern web applications. I love creating efficient, scalable solutions and learning new technologies.',
-  location: 'San Francisco, CA',
-  email: 'john.doe@example.com',
-  phone: '+1 (555) 123-4567',
-  website: 'https://johndoe.dev',
-  github: 'https://github.com/johndoe',
-  linkedin: 'https://linkedin.com/in/johndoe',
-  twitter: 'https://twitter.com/johndoe',
-  avatar:
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+  location: 'India, Delhi',
+  email: 'harshrawat.dev@gmail.com',
+  //   phone: '+1 (555) 123-4567',
+  website: 'https://www.harshraw.at/',
+  github: 'https://github.com/Harshrawat27',
+  linkedin: 'https://www.linkedin.com/in/harsh-rawat-037a59202/',
+  twitter: 'https://x.com/Harshrwt27',
+  avatar: '/profile.png',
 };
 
 export const projects: Project[] = [
