@@ -136,7 +136,7 @@ body {
 }
 
 /* Left side navbar */
-.side-nav {
+/* .side-nav {
   @apply fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50;
 }
 
@@ -154,6 +154,23 @@ body {
 .side-nav-item.active {
   @apply border-[var(--primary)] bg-[var(--primary)];
   color: white;
+} */
+
+.modern-sidebar {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .modern-sidebar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light .modern-sidebar {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Timeline marker */

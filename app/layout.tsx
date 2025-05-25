@@ -71,14 +71,6 @@ export default function RootLayout({
             <Analytics />
           </main>
 
-          {/* Made with indicator */}
-          <div className='fixed bottom-4 right-4 z-40'>
-            <div className='bg-[var(--primary)] bg-opacity-10 backdrop-blur-sm border border-[var(--primary)] border-opacity-30 rounded-lg px-3 py-2 text-xs text-[var(--text-primary)]'>
-              <span>Built with </span>
-              <span className='font-bold'>Next.js</span>
-            </div>
-          </div>
-
           {/* Grid decorations */}
           <div className='grid-marker top-[25%] left-[10%]'></div>
           <div className='grid-marker bottom-[15%] right-[10%]'></div>
