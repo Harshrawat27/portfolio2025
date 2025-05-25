@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: 'Harsh Rawat',
   description:
     'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
+  icons: {
+    icon: '/favicon.ico',
+  },
   keywords: [
     'Full Stack Developer',
     'React',
@@ -52,6 +55,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+      </head>
       <body className='font-sans min-h-screen flex flex-col relative'>
         <ThemeProvider>
           {/* Date indicator */}
