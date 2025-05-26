@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SideNav from '@/components/SideNav';
-import { blogPosts } from '@/data/portfolio';
+import { blogPosts } from '@/data/blog';
 
 export default function BlogsPage() {
   const formatDate = (dateString: string) => {

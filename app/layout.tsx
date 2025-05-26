@@ -22,9 +22,6 @@ export const metadata: Metadata = {
   title: 'Harsh Rawat',
   description:
     'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
-  icons: {
-    icon: '/favicon.ico',
-  },
   keywords: [
     'Full Stack Developer',
     'React',
@@ -46,6 +43,15 @@ export const metadata: Metadata = {
     description:
       'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
   },
+  // Proper favicon configuration
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
 };
 
 export default function RootLayout({
@@ -55,9 +61,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-      </head>
       <body className='font-sans min-h-screen flex flex-col relative'>
         <ThemeProvider>
           {/* Date indicator */}
@@ -81,7 +84,7 @@ export default function RootLayout({
           <div className='grid-marker top-[25%] left-[10%]'></div>
           <div className='grid-marker bottom-[15%] right-[10%]'></div>
           <div className='grid-marker top-[10%] right-[30%]'></div>
-          <div className='grid-marker bottom-[30%] left-[20%]'></div>
+          <div className='grid-marker bottom-[30%] left-[20%] '></div>
         </ThemeProvider>
       </body>
     </html>

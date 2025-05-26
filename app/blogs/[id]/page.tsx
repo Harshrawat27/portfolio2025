@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SideNav from '@/components/SideNav';
-import { blogPosts } from '@/data/portfolio';
+import { blogPosts } from '@/data/blog';
 import { notFound } from 'next/navigation';
 
 interface BlogDetailPageProps {
