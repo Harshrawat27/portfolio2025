@@ -2,336 +2,82 @@ import { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1',
-    title: 'Building Scalable React Applications: Best Practices and Patterns',
+    id: 'a-letter-to-myself',
+    title: 'A Letter to My 10-Years-Later Version',
     excerpt:
-      'Learn the essential patterns and best practices for building large-scale React applications that are maintainable and performant.',
-    content: `
-  # Building Scalable React Applications: Best Practices and Patterns
-  
-  Building large-scale React applications requires careful planning and adherence to best practices. In this post, we'll explore the key patterns and techniques that will help you create maintainable and scalable React applications.
-  
-  ## 1. Component Architecture
-  
-  ### Atomic Design Principles
-  Organize your components using atomic design principles:
-  - **Atoms**: Basic building blocks (buttons, inputs)
-  - **Molecules**: Simple groups of UI elements
-  - **Organisms**: Complex UI components
-  - **Templates**: Page-level objects that place components into layout
-  - **Pages**: Specific instances of templates
-  
-  ### Example Component Structure
-  \`\`\`
-  src/
-    components/
-      atoms/
-        Button/
-        Input/
-      molecules/
-        SearchBar/
-        Card/
-      organisms/
-        Header/
-        ProductList/
-      templates/
-        PageLayout/
-      pages/
-        HomePage/
-        ProductPage/
-  \`\`\`
-  
-  ## 2. State Management
-  
-  ### Choose the Right Tool
-  - **Local State**: Use \`useState\` for component-specific state
-  - **Global State**: Use Context API for simple global state
-  - **Complex State**: Use Redux Toolkit or Zustand for complex applications
-  
-  ### Example with Context API
-  \`\`\`jsx
-  const ThemeContext = createContext();
-  
-  export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('light');
-    
-    return (
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        {children}
-      </ThemeContext.Provider>
-    );
-  };
-  \`\`\`
-  
-  ## 3. Performance Optimization
-  
-  ### React.memo and useMemo
-  Prevent unnecessary re-renders:
-  
-  \`\`\`jsx
-  const ExpensiveComponent = React.memo(({ data }) => {
-    const processedData = useMemo(() => {
-      return data.map(item => ({
-        ...item,
-        processed: true
-      }));
-    }, [data]);
-  
-    return <div>{/* render processed data */}</div>;
-  });
-  \`\`\`
-  
-  ### Code Splitting
-  Use dynamic imports for lazy loading:
-  
-  \`\`\`jsx
-  const LazyComponent = lazy(() => import('./LazyComponent'));
-  
-  function App() {
-    return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <LazyComponent />
-      </Suspense>
-    );
-  }
-  \`\`\`
-  
-  ## 4. Testing Strategy
-  
-  ### Unit Testing
-  Test individual components in isolation:
-  
-  \`\`\`jsx
-  import { render, screen } from '@testing-library/react';
-  import Button from './Button';
-  
-  test('renders button with text', () => {
-    render(<Button>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeInTheDocument();
-  });
-  \`\`\`
-  
-  ### Integration Testing
-  Test component interactions and data flow.
-  
-  ## 5. Error Handling
-  
-  ### Error Boundaries
-  Implement error boundaries to catch and handle errors gracefully:
-  
-  \`\`\`jsx
-  class ErrorBoundary extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { hasError: false };
-    }
-  
-    static getDerivedStateFromError(error) {
-      return { hasError: true };
-    }
-  
-    componentDidCatch(error, errorInfo) {
-      console.error('Error caught by boundary:', error, errorInfo);
-    }
-  
-    render() {
-      if (this.state.hasError) {
-        return <h1>Something went wrong.</h1>;
-      }
-  
-      return this.props.children;
-    }
-  }
-  \`\`\`
-  
-  ## Conclusion
-  
-  Building scalable React applications is about more than just writing code—it's about creating a sustainable architecture that can grow with your project. By following these patterns and best practices, you'll be well-equipped to handle the challenges of large-scale development.
-  
-  Remember to:
-  - Keep components small and focused
-  - Manage state appropriately
-  - Optimize for performance
-  - Write comprehensive tests
-  - Handle errors gracefully
-  
-  Happy coding!
-      `,
-    publishDate: '2024-01-15',
-    readTime: 8,
-    tags: ['React', 'JavaScript', 'Frontend', 'Best Practices'],
+      "I don't believe in luck, but I do believe in serendipity. This is just a letter to my 10-years-later version. A journey from book design to web development to building side projects.",
+    content: `I don't believe in luck, but I do believe in serendipity. This is just a letter to my 10-years-later version.
+
+I started my side project journey 5 months ago (I know words like startup and indie hacking sound too heavy, so I won't use them). So far, I've launched 3 products. The first one got zero traction. The second one got some. The third one? Decent traction—and I'm grinding on more.
+
+Before this, I used to freelance as a web developer. But I actually started out as a book designer.
+
+Back in 2021, I began designing books. Around that time, I was constantly searching about small businesses, so maybe that's why YouTube recommended me a video on KDP. Not sure how much individual sellers are making these days, but back then, KDP was trending. I learned how to design KDP books in just 2 hours and created my gigs on 2–3 major freelancing platforms.
+
+Originally, my plan was to sell books. But if I remember correctly, back then you couldn't sell directly on KDP from India. That's why I ended up offering design services instead.
+
+When I was creating my gig, I had zero expectations. I had never seen anyone around me succeed in freelancing. But I still took the leap.
+
+Around 12 days later, I got my first message. And somehow, that message turned into my first client. Competition in KDP book design was really low at that time. I still remember—on some keywords, I was ranking on the first page.
+
+That first order was for $30, and the client even gave me a $15 tip. $45. My first online income. I was so happy. It felt like magic. A person in New Zealand giving work to someone in India.
+
+My first year (2021) didn't bring much income. I could've earned more from a random job. But in the second year, I continued as a book designer and 10x'd my previous year's earnings. It felt like success, and it was—but even then, the total amount wasn't that huge.
+
+Many close friends and family members asked, "Why are you doing this? You could've earned the same doing any job." But I shut out the noise.
+
+I kept going till mid-2022. Eventually, I realized even the top sellers weren't earning that much. I also got tired of the work—it became too monotonous, too boring.
+
+That's when I stumbled upon web development. Now, web dev on freelancing platforms is tough. Super competitive. But thankfully, my 25+ reviews from book design gave me a head start. To clients, I didn't look like someone new—I looked experienced. Who would've thought that designing books would help me in that way?
+
+In 2023, I 13x'd my revenue. That year felt good.
+
+In 2024, I grew another 1.6x. I could've taken it to 2.5x easily, but toward the end of the year, I shifted my focus toward learning and building side projects—so I took on fewer freelance gigs.
+
+That's why I don't believe in luck, but I do believe in serendipity. One random YouTube video. A 2-hour learning session. Creating a gig. Low competition. First few reviews. And then turning that momentum into web development work. None of this was planned. It just happened.
+
+A few years from now, I'll probably look back at my side project journey and write another letter like this.
+
+Till then—
+
+Keep building. Keep pushing. Things will fall into place.`,
+    publishDate: '2025-01-15',
+    readTime: 4,
+    tags: ['Journey', 'Freelancing', 'Side Projects', 'Personal'],
     featured: true,
   },
   {
-    id: '2',
-    title: 'The Future of Web Development: Trends to Watch in 2024',
+    id: 'designing-rockets-is-more-exciting',
+    title:
+      'Designing rockets is any day more exciting than designing Instagram posts.',
     excerpt:
-      'Explore the emerging trends and technologies that are shaping the future of web development in 2024 and beyond.',
-    content: `
-  # The Future of Web Development: Trends to Watch in 2024
-  
-  The web development landscape is constantly evolving, and 2024 promises to bring exciting new trends and technologies. Let's explore what's on the horizon for developers.
-  
-  ## 1. AI-Powered Development Tools
-  
-  ### Code Generation and Assistance
-  AI tools like GitHub Copilot and ChatGPT are revolutionizing how we write code:
-  - Automated code completion
-  - Bug detection and fixes
-  - Documentation generation
-  - Code review assistance
-  
-  ### Impact on Development Workflow
-  \`\`\`javascript
-  // AI-assisted code generation example
-  function generateUserProfile(userData) {
-    // AI can suggest optimal data structures and validation
-    return {
-      id: userData.id,
-      name: userData.name,
-      email: userData.email,
-      preferences: userData.preferences || {}
-    };
-  }
-  \`\`\`
-  
-  ## 2. WebAssembly (WASM) Growth
-  
-  ### Performance-Critical Applications
-  WebAssembly enables near-native performance in browsers:
-  - Image/video processing
-  - Gaming applications
-  - Scientific computing
-  - Crypto operations
-  
-  ### Language Diversity
-  Languages compiling to WASM:
-  - Rust
-  - C/C++
-  - Go
-  - AssemblyScript
-  
-  ## 3. Edge Computing and Serverless
-  
-  ### Edge Functions
-  Deploy functions closer to users for better performance:
-  - Reduced latency
-  - Better user experience
-  - Global distribution
-  
-  ### Serverless Adoption
-  Benefits of serverless architecture:
-  - Automatic scaling
-  - Pay-per-use pricing
-  - Reduced operational overhead
-  - Focus on business logic
-  
-  ## 4. Progressive Web Apps (PWAs) Evolution
-  
-  ### Enhanced Capabilities
-  PWAs are becoming more powerful:
-  - File system access
-  - Hardware integration
-  - Advanced caching strategies
-  - Background sync
-  
-  ### Mobile-First Development
-  PWAs bridge the gap between web and native:
-  - App-like experience
-  - Offline functionality
-  - Push notifications
-  - Installation prompts
-  
-  ## 5. Component-Driven Development
-  
-  ### Design Systems
-  Standardized component libraries:
-  - Consistent UI/UX
-  - Faster development
-  - Better collaboration
-  - Maintainable code
-  
-  ### Tools and Frameworks
-  Popular tools for component development:
-  - Storybook
-  - Bit
-  - Figma
-  - Design tokens
-  
-  ## 6. Micro-Frontends Architecture
-  
-  ### Scalable Team Organization
-  Break large applications into smaller, manageable pieces:
-  - Independent deployment
-  - Technology diversity
-  - Team autonomy
-  - Reduced complexity
-  
-  ### Implementation Strategies
-  \`\`\`javascript
-  // Module federation example
-  const ModuleFederationPlugin = require('@module-federation/webpack');
-  
-  module.exports = {
-    plugins: [
-      new ModuleFederationPlugin({
-        name: 'header',
-        filename: 'remoteEntry.js',
-        exposes: {
-          './Header': './src/Header'
-        }
-      })
-    ]
-  };
-  \`\`\`
-  
-  ## 7. Web3 and Blockchain Integration
-  
-  ### Decentralized Applications (dApps)
-  Web3 technologies are becoming mainstream:
-  - Smart contracts integration
-  - Cryptocurrency payments
-  - NFT marketplaces
-  - Decentralized storage
-  
-  ### Development Tools
-  Popular Web3 development tools:
-  - MetaMask integration
-  - Web3.js and Ethers.js
-  - IPFS for storage
-  - Hardhat for smart contracts
-  
-  ## 8. Sustainability and Green Computing
-  
-  ### Performance Optimization
-  Focus on reducing carbon footprint:
-  - Optimized bundle sizes
-  - Efficient algorithms
-  - Reduced server requests
-  - Green hosting providers
-  
-  ### Measuring Impact
-  Tools for measuring web sustainability:
-  - Website Carbon Calculator
-  - Lighthouse sustainability audits
-  - Core Web Vitals optimization
-  
-  ## Conclusion
-  
-  The future of web development is exciting and full of opportunities. As developers, staying updated with these trends will help us build better, more efficient, and more user-friendly applications.
-  
-  Key takeaways:
-  - Embrace AI tools for productivity
-  - Consider WebAssembly for performance-critical tasks
-  - Adopt edge computing for better user experience
-  - Build with sustainability in mind
-  - Stay curious and keep learning
-  
-  The web platform continues to evolve, and these trends will shape how we build applications in the coming years. Which trend are you most excited about?
-      `,
-    publishDate: '2024-01-08',
-    readTime: 6,
-    tags: ['Web Development', 'Trends', 'Technology', 'Future'],
+      'Sometimes those initial $ can create silly biases in you. A raw reflection on staying true to your craft and not getting distracted by quick money in freelancing.',
+    content: `Just talked to someone about creating a video. I had hired him as a video editor 1–2 years ago.
+
+Now, he has shifted to UI/UX design, social media post design, and all that.
+
+Honestly, I felt bad after hearing this.
+
+Don't fall for money. Sometimes those initial $ can create silly biases in you.
+
+As a freelancer, it's easy to get distracted from your original craft. You position yourself as a video editor, but someone approaches you for social media post designs, and you start doing that instead.
+
+This especially happens with Indian freelancers. Everyone in the world knows you'll work for them at very cheap rates.
+
+There's nothing wrong with taking that work but at least have the guts to pass it to someone else and make 20–30% commission only.
+
+Don't start doing anything that has no future just for a little money.
+
+Now I'm going to say something harsh—sorry if you feel bad after listening to this. No one, absolutely no one, truly enjoys designing random social media posts or just doing basic UI/UX forever.
+
+If you are truly a designer at heart, if you breathe design day and night, then someday, you'll move towards designing real, physical products.
+
+Designing rockets is any day more exciting than designing Instagram posts.
+
+Don't fall into the trap. Keep pushing yourself. You're capable of much more.`,
+    publishDate: '2025-01-20',
+    readTime: 2,
+    tags: ['Freelancing', 'Career', 'Design', 'Advice'],
     featured: false,
   },
 ];
