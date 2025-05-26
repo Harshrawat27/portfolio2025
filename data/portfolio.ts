@@ -47,7 +47,7 @@ export const projects: Project[] = [
     liveUrl: 'https://www.githubfolio.com/',
     featured: true,
     category: 'web',
-    year: 2023,
+    year: 2025,
   },
   {
     id: '3',
