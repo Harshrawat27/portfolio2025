@@ -43,8 +43,8 @@ export const projects: Project[] = [
     image:
       'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
     technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Material-UI'],
-    githubUrl: 'https://github.com/johndoe/task-manager',
-    liveUrl: 'https://github.com/Harshrawat27/GitHubFolio',
+    githubUrl: 'https://github.com/Harshrawat27/GitHubFolio',
+    liveUrl: 'https://www.githubfolio.com/',
     featured: true,
     category: 'web',
     year: 2023,
