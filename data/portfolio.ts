@@ -49,33 +49,6 @@ export const projects: Project[] = [
     category: 'web',
     year: 2025,
   },
-  {
-    id: '3',
-    title: 'Weather Dashboard',
-    description:
-      'A responsive weather dashboard that provides detailed weather information, forecasts, and interactive maps using multiple weather APIs.',
-    image:
-      'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-    technologies: ['Vue.js', 'TypeScript', 'Chart.js', 'OpenWeather API'],
-    githubUrl: 'https://github.com/johndoe/weather-dashboard',
-    liveUrl: 'https://weather.johndoe.dev',
-    featured: false,
-    category: 'web',
-    year: 2023,
-  },
-  {
-    id: '4',
-    title: 'Mobile Fitness Tracker',
-    description:
-      'A React Native mobile app for tracking workouts, nutrition, and fitness goals with offline capability and data synchronization.',
-    image:
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
-    technologies: ['React Native', 'TypeScript', 'SQLite', 'Redux'],
-    githubUrl: 'https://github.com/johndoe/fitness-tracker',
-    featured: false,
-    category: 'mobile',
-    year: 2022,
-  },
 ];
 
 export const experiences: Experience[] = [
