@@ -119,193 +119,371 @@ export default function SideNav() {
     if (hoveredIndex === null) return 1;
 
     const distance = Math.abs(index - hoveredIndex);
-    if (distance === 0) return 1.4; // Hovered item
-    if (distance === 1) return 1.2; // Adjacent items
-    if (distance === 2) return 1.1; // Second adjacent
+    if (distance === 0) return 1.2; // Reduced scale for mobile
+    if (distance === 1) return 1.1; // Adjacent items
     return 1; // Far items
   };
 
   const getItemSpacing = (index: number) => {
-    if (hoveredIndex === null) return 'my-1';
+    if (hoveredIndex === null) return 'mx-1 md:my-1';
 
     const distance = Math.abs(index - hoveredIndex);
-    if (distance === 0) return 'my-3'; // Hovered item gets more space
-    if (distance === 1) return 'my-2'; // Adjacent items get some space
-    return 'my-1'; // Normal spacing
+    if (distance === 0) return 'mx-2 md:my-3'; // Hovered item gets more space
+    if (distance === 1) return 'mx-1.5 md:my-2'; // Adjacent items get some space
+    return 'mx-1 md:my-1'; // Normal spacing
   };
 
   return (
-    <div className='fixed left-6 top-1/2 -translate-y-1/2 z-50'>
-      <div
-        className='flex flex-col bg-black/20 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 p-2 shadow-2xl'
-        style={{
-          background: 'rgba(0, 0, 0, 0.1)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-        }}
-      >
-        {/* Navigation Items */}
-        {navItems.map((item, index) => (
-          <div
-            key={item.href}
-            className={`transition-all duration-300 ease-out ${getItemSpacing(
-              index
-            )}`}
-            style={{
-              transform: `scale(${getItemScale(index)})`,
-            }}
-          >
-            {item.type === 'external' ? (
-              <a
-                href={item.href}
-                target='_blank'
-                rel='noopener noreferrer'
-                className={`
-                  relative flex items-center justify-center w-12 h-12 rounded-xl 
-                  transition-all duration-300 ease-out group
-                  ${
-                    item.isActive
-                      ? 'bg-white/20 text-white shadow-lg'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }
-                `}
-                title={item.title}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* Background glow effect */}
-                <div
-                  className={`
-                  absolute inset-0 rounded-xl transition-all duration-300
-                  ${
-                    item.isActive
-                      ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
-                      : 'group-hover:bg-gradient-to-br group-hover:from-blue-400/10 group-hover:to-purple-500/10'
-                  }
-                `}
-                />
-
-                {/* Icon */}
-                <div className='relative z-10 transition-transform duration-300 group-hover:scale-110'>
-                  {item.icon}
-                </div>
-              </a>
-            ) : (
-              <Link
-                href={item.href}
-                className={`
-                  relative flex items-center justify-center w-12 h-12 rounded-xl 
-                  transition-all duration-300 ease-out group
-                  ${
-                    item.isActive
-                      ? 'bg-white/20 text-white shadow-lg'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }
-                `}
-                title={item.title}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* Background glow effect */}
-                <div
-                  className={`
-                  absolute inset-0 rounded-xl transition-all duration-300
-                  ${
-                    item.isActive
-                      ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
-                      : 'group-hover:bg-gradient-to-br group-hover:from-blue-400/10 group-hover:to-purple-500/10'
-                  }
-                `}
-                />
-
-                {/* Icon */}
-                <div className='relative z-10 transition-transform duration-300 group-hover:scale-110'>
-                  {item.icon}
-                </div>
-
-                {/* Active indicator */}
-                {item.isActive && (
-                  <div className='absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-6 bg-white rounded-full shadow-lg' />
-                )}
-              </Link>
-            )}
-          </div>
-        ))}
-
-        {/* Separator */}
-        <div className='w-8 h-px bg-white/20 mx-auto my-2' />
-
-        {/* Theme Toggle */}
+    <>
+      {/* Desktop Navigation - Left Side */}
+      <div className='hidden md:block fixed left-6 top-1/2 -translate-y-1/2 z-50'>
         <div
-          className={`transition-all duration-300 ease-out ${getItemSpacing(
-            navItems.length
-          )}`}
+          className='flex flex-col bg-black/20 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 p-2 shadow-2xl'
           style={{
-            transform: `scale(${getItemScale(navItems.length)})`,
+            background: 'rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
           }}
         >
-          <button
-            onClick={toggleTheme}
-            className='relative flex items-center justify-center w-12 h-12 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 ease-out group'
-            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            onMouseEnter={() => setHoveredIndex(navItems.length)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            {/* Background glow effect */}
-            <div className='absolute inset-0 rounded-xl transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-yellow-400/10 group-hover:to-orange-500/10' />
+          {/* Navigation Items */}
+          {navItems.map((item, index) => (
+            <div
+              key={item.href}
+              className={`transition-all duration-300 ease-out ${
+                getItemSpacing(index).split(' ')[1]
+              }`}
+              style={{
+                transform: `scale(${getItemScale(index)})`,
+              }}
+            >
+              {item.type === 'external' ? (
+                <a
+                  href={item.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={`
+                    relative flex items-center justify-center w-12 h-12 rounded-xl 
+                    transition-all duration-300 ease-out group
+                    ${
+                      item.isActive
+                        ? 'bg-white/20 text-white shadow-lg'
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                    }
+                  `}
+                  title={item.title}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  {/* Background glow effect */}
+                  <div
+                    className={`
+                    absolute inset-0 rounded-xl transition-all duration-300
+                    ${
+                      item.isActive
+                        ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
+                        : 'group-hover:bg-gradient-to-br group-hover:from-blue-400/10 group-hover:to-purple-500/10'
+                    }
+                  `}
+                  />
 
-            {/* Icon with smooth transition */}
-            <div className='relative z-10 transition-all duration-300 group-hover:scale-110 w-5 h-5 flex items-center justify-center'>
-              {/* Sun icon */}
-              <div
-                className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-                  theme === 'dark'
-                    ? 'rotate-0 opacity-100 scale-100'
-                    : 'rotate-180 opacity-0 scale-75'
-                }`}
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='w-5 h-5'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
+                  {/* Icon */}
+                  <div className='relative z-10 transition-transform duration-300 group-hover:scale-110'>
+                    {item.icon}
+                  </div>
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`
+                    relative flex items-center justify-center w-12 h-12 rounded-xl 
+                    transition-all duration-300 ease-out group
+                    ${
+                      item.isActive
+                        ? 'bg-white/20 text-white shadow-lg'
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                    }
+                  `}
+                  title={item.title}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+                  {/* Background glow effect */}
+                  <div
+                    className={`
+                    absolute inset-0 rounded-xl transition-all duration-300
+                    ${
+                      item.isActive
+                        ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
+                        : 'group-hover:bg-gradient-to-br group-hover:from-blue-400/10 group-hover:to-purple-500/10'
+                    }
+                  `}
                   />
-                </svg>
-              </div>
-              {/* Moon icon */}
-              <div
-                className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-                  theme === 'light'
-                    ? 'rotate-0 opacity-100 scale-100'
-                    : 'rotate-180 opacity-0 scale-75'
-                }`}
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='w-5 h-5'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
-                  />
-                </svg>
-              </div>
+
+                  {/* Icon */}
+                  <div className='relative z-10 transition-transform duration-300 group-hover:scale-110'>
+                    {item.icon}
+                  </div>
+
+                  {/* Active indicator */}
+                  {item.isActive && (
+                    <div className='absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-6 bg-white rounded-full shadow-lg' />
+                  )}
+                </Link>
+              )}
             </div>
-          </button>
+          ))}
+
+          {/* Separator */}
+          <div className='w-8 h-px bg-white/20 mx-auto my-2' />
+
+          {/* Theme Toggle */}
+          <div
+            className={`transition-all duration-300 ease-out ${
+              getItemSpacing(navItems.length).split(' ')[1]
+            }`}
+            style={{
+              transform: `scale(${getItemScale(navItems.length)})`,
+            }}
+          >
+            <button
+              onClick={toggleTheme}
+              className='relative flex items-center justify-center w-12 h-12 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 ease-out group'
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              onMouseEnter={() => setHoveredIndex(navItems.length)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Background glow effect */}
+              <div className='absolute inset-0 rounded-xl transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-yellow-400/10 group-hover:to-orange-500/10' />
+
+              {/* Icon with smooth transition */}
+              <div className='relative z-10 transition-all duration-300 group-hover:scale-110 w-5 h-5 flex items-center justify-center'>
+                {/* Sun icon */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                    theme === 'dark'
+                      ? 'rotate-0 opacity-100 scale-100'
+                      : 'rotate-180 opacity-0 scale-75'
+                  }`}
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='w-5 h-5'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+                    />
+                  </svg>
+                </div>
+                {/* Moon icon */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                    theme === 'light'
+                      ? 'rotate-0 opacity-100 scale-100'
+                      : 'rotate-180 opacity-0 scale-75'
+                  }`}
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='w-5 h-5'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+                    />
+                  </svg>
+                </div>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Navigation - Bottom */}
+      <div className='md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50'>
+        <div
+          className='flex items-center justify-center bg-black/20 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 p-3 shadow-2xl'
+          style={{
+            background: 'rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+          }}
+        >
+          {/* Navigation Items */}
+          <div className='flex items-center space-x-1'>
+            {navItems.map((item, index) => (
+              <div
+                key={item.href}
+                className={`transition-all duration-300 ease-out ${
+                  getItemSpacing(index).split(' ')[0]
+                }`}
+                style={{
+                  transform: `scale(${getItemScale(index)})`,
+                }}
+              >
+                {item.type === 'external' ? (
+                  <a
+                    href={item.href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={`
+                      relative flex items-center justify-center w-11 h-11 rounded-xl 
+                      transition-all duration-300 ease-out group
+                      ${
+                        item.isActive
+                          ? 'bg-white/20 text-white shadow-lg'
+                          : 'text-white/70 active:text-white active:bg-white/10'
+                      }
+                    `}
+                    title={item.title}
+                    onTouchStart={() => setHoveredIndex(index)}
+                    onTouchEnd={() => setHoveredIndex(null)}
+                  >
+                    {/* Background glow effect */}
+                    <div
+                      className={`
+                      absolute inset-0 rounded-xl transition-all duration-300
+                      ${
+                        item.isActive
+                          ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
+                          : 'group-active:bg-gradient-to-br group-active:from-blue-400/10 group-active:to-purple-500/10'
+                      }
+                    `}
+                    />
+
+                    {/* Icon */}
+                    <div className='relative z-10 transition-transform duration-300 group-active:scale-110'>
+                      {item.icon}
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`
+                      relative flex items-center justify-center w-11 h-11 rounded-xl 
+                      transition-all duration-300 ease-out group
+                      ${
+                        item.isActive
+                          ? 'bg-white/20 text-white shadow-lg'
+                          : 'text-white/70 active:text-white active:bg-white/10'
+                      }
+                    `}
+                    title={item.title}
+                    onTouchStart={() => setHoveredIndex(index)}
+                    onTouchEnd={() => setHoveredIndex(null)}
+                  >
+                    {/* Background glow effect */}
+                    <div
+                      className={`
+                      absolute inset-0 rounded-xl transition-all duration-300
+                      ${
+                        item.isActive
+                          ? 'bg-gradient-to-br from-blue-400/20 to-purple-500/20 shadow-lg'
+                          : 'group-active:bg-gradient-to-br group-active:from-blue-400/10 group-active:to-purple-500/10'
+                      }
+                    `}
+                    />
+
+                    {/* Icon */}
+                    <div className='relative z-10 transition-transform duration-300 group-active:scale-110'>
+                      {item.icon}
+                    </div>
+
+                    {/* Active indicator - positioned at bottom for mobile */}
+                    {item.isActive && (
+                      <div className='absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-1 bg-white rounded-full shadow-lg' />
+                    )}
+                  </Link>
+                )}
+              </div>
+            ))}
+
+            {/* Separator */}
+            <div className='h-8 w-px bg-white/20 mx-2' />
+
+            {/* Theme Toggle */}
+            <div
+              className={`transition-all duration-300 ease-out ${
+                getItemSpacing(navItems.length).split(' ')[0]
+              }`}
+              style={{
+                transform: `scale(${getItemScale(navItems.length)})`,
+              }}
+            >
+              <button
+                onClick={toggleTheme}
+                className='relative flex items-center justify-center w-11 h-11 rounded-xl text-white/70 active:text-white active:bg-white/10 transition-all duration-300 ease-out group'
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                onTouchStart={() => setHoveredIndex(navItems.length)}
+                onTouchEnd={() => setHoveredIndex(null)}
+              >
+                {/* Background glow effect */}
+                <div className='absolute inset-0 rounded-xl transition-all duration-300 group-active:bg-gradient-to-br group-active:from-yellow-400/10 group-active:to-orange-500/10' />
+
+                {/* Icon with smooth transition */}
+                <div className='relative z-10 transition-all duration-300 group-active:scale-110 w-5 h-5 flex items-center justify-center'>
+                  {/* Sun icon */}
+                  <div
+                    className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                      theme === 'dark'
+                        ? 'rotate-0 opacity-100 scale-100'
+                        : 'rotate-180 opacity-0 scale-75'
+                    }`}
+                  >
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='w-5 h-5'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+                      />
+                    </svg>
+                  </div>
+                  {/* Moon icon */}
+                  <div
+                    className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+                      theme === 'light'
+                        ? 'rotate-0 opacity-100 scale-100'
+                        : 'rotate-180 opacity-0 scale-75'
+                    }`}
+                  >
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='w-5 h-5'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
