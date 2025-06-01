@@ -80,4 +80,29 @@ Don't fall into the trap. Keep pushing yourself. You're capable of much more.`,
     tags: ['Freelancing', 'Career', 'Design', 'Advice'],
     featured: false,
   },
+  {
+    id: 'do-first-understand-later',
+    title: 'We are often better at doing things than fully understanding them.',
+    excerpt:
+      'Why starting with action often leads to deeper understanding than theoretical learning alone. A reflection on the power of learning through doing.',
+    content: `We are often better at *doing* things than fully *understanding* them.
+  
+  When it comes to doing things, many people think we first have to understand something completely and then start doing it. But I believe it's often more effective to take another approach: first, start doing things, and then understand them along the way.
+  
+  It might sound counterintuitive, right?
+  
+  It's easier to write imperfect code first and then understand every bit of it and how to improve it later. If you get stuck in a loop, waiting to write your first line of code until you fully understand everything, you might never start. In fact, even if you start with trying to understand everything upfront, you'll likely still have many doubts because it's hard to measure theoretical understanding without practical application.
+  
+  This thought really crystallized for me when I reflected on my own first project. I learned the basics of web development in about 10-12 days, and within the next 10-12 days, I landed my [first web development project](/blogs/a-letter-to-myself). It was my good fortune that this website was quite complex, especially in terms of animations and other features. But I said yes to the challenge. Honestly, at that point, I probably only knew about 40% of what was required; the other 60% was uncharted territory for me. I broke the website multiple times in the process, found and experimented with at least 10 different libraries, figured out how to integrate external libraries into the project, and ultimately completed it in 20s days.
+  
+  I'm absolutely sure no book or course could have taught me that much in just 15 days. And now, because of that hands-on experience, it's much easier for me to understand the logic behind how things work in web development.
+  
+  Evolutionary-wise, this rings true as well. Much of human progress has been built on empirical observation and iteration. We tried something; if it worked, we kept it or improved it; if it didn't, we adjusted. This bias towards action and learning from direct experience would have offered significant survival and adaptive advantages, allowing us to navigate and shape our environments effectively. Think of the discovery of fire, the development of early agriculture, or even the origins of medicine.
+  
+  The 'doing' often preceded the deep 'why'.`,
+    publishDate: '2025-06-01',
+    readTime: 3,
+    tags: ['Learning', 'Development', 'Philosophy', 'Experience'],
+    featured: false,
+  },
 ];
