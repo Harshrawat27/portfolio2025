@@ -2,7 +2,7 @@ import { PersonalInfo, Project, Experience, Skill } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: 'Harsh Rawat',
-  title: 'Problem Solver',
+  title: 'eccentric',
   bio: 'Waiting for AGI ... Experimenting without expectation ... Self-taught ... Never been to college',
   location: 'Bharat, Delhi',
   email: 'harshrawat.dev@gmail.com',
