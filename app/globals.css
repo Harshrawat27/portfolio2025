@@ -196,23 +196,39 @@ body {
   @apply absolute text-xs text-[var(--text-secondary)] font-mono;
 }
 
-/* Markdown content theming */
+/* Markdown content theming - FIXED */
 .dark .prose h1,
 .dark .prose h2,
 .dark .prose h3,
 .dark .prose h4,
 .dark .prose h5,
-.dark .prose h6,
+.dark .prose h6 {
+  color: white !important;
+}
+
 .dark .prose strong,
 .dark .prose b {
-  color: white;
+  color: white !important;
 }
 
 .dark .prose p,
 .dark .prose li,
 .dark .prose td,
 .dark .prose th {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
+}
+
+/* Fix for list items specifically */
+.dark .prose ul li,
+.dark .prose ol li {
+  color: var(--text-secondary) !important;
+}
+
+.dark .prose ul li strong,
+.dark .prose ol li strong,
+.dark .prose ul li b,
+.dark .prose ol li b {
+  color: white !important;
 }
 
 .light .prose h1,
@@ -220,22 +236,38 @@ body {
 .light .prose h3,
 .light .prose h4,
 .light .prose h5,
-.light .prose h6,
+.light .prose h6 {
+  color: var(--text-primary) !important;
+}
+
 .light .prose strong,
 .light .prose b {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 
 .light .prose p,
 .light .prose li,
 .light .prose td,
 .light .prose th {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
+}
+
+/* Fix for list items in light mode */
+.light .prose ul li,
+.light .prose ol li {
+  color: var(--text-secondary) !important;
+}
+
+.light .prose ul li strong,
+.light .prose ol li strong,
+.light .prose ul li b,
+.light .prose ol li b {
+  color: var(--text-primary) !important;
 }
 
 .prose code:not(pre code) {
-  color: var(--primary);
-  background-color: var(--card-bg);
+  color: var(--primary) !important;
+  background-color: var(--card-bg) !important;
 }
 
 .prose pre {
@@ -246,13 +278,32 @@ body {
 }
 
 .prose code {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 .prose a {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 .prose blockquote {
-  border-left-color: var(--primary);
-  color: var(--text-secondary);
+  border-left-color: var(--primary) !important;
+  color: var(--text-secondary) !important;
+}
+
+.dark strong,
+.dark .prose strong {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Light mode - make all <strong> tags primary text color */
+.light strong,
+.light .prose strong {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Global fallback for strong tags (works without prose class) */
+strong {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
 }
