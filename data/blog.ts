@@ -269,4 +269,62 @@ Good luck with your freelancing journey! 🚀
     ],
     featured: true,
   },
+  {
+    id: 'types-of-freelance-pricing',
+    title:
+      "After working as a freelancer for 3 years. here's what i've learned about the pricing freelance projects",
+    excerpt:
+      "there are mainly 5 types of pricing: hourly, fixed/project based pricing, retainer pricing, value based pricing, daily pricing. every pricing model has its pros and cons you can't use the same one for every project.",
+    content: `
+  # After working as a freelancer for 3 years. here's what i've learned about the pricing freelance projects
+  
+  there are mainly 5 types of pricing:
+  - hourly
+  - fixed/project based pricing
+  - retainer pricing
+  - value based pricing
+  - daily pricing
+  
+  every pricing model has its pros and cons you can't use the same one for every project.
+  
+  ## Hourly Pricing
+  
+  this is good if you are just starting your freelancing career and client insists on hourly billing. it's one of those models mostly used by beginners and highly experienced freelancers beginners often have to accept this while experienced ones charge a premium.
+  
+  imo stay away for it if you can. i do know one person who charges $200/hour and work like 8-10 hours per day.
+  - slow down learning
+  - send weekly invoices
+  - maintain hourly sheet
+  
+  ## Fixed/Project Based Pricing
+  
+  this is the pricing i've worked with the most and i love it. it's best if you are on intermediate level.
+  - gives you freedom to explore more
+  - not answerable on a daily basis
+  - charge 50% upfront get work done and collect the remaining amount
+  
+  if you've mastered your craft and built a strong library of reusable components, this model can effectively pay you $300/hour. there were times when i reused code from past projects and charged $300 for work that took me just an hour.
+  
+  ## Retainer Pricing
+  
+  - the client pays a set monthly (or periodic) fee to reserve your time or services
+  - it's like monthly drug (salary) in our field we mostly charge this one the work is done
+  
+  I used to charge $300/month for 7–8 hours of work mostly ongoing changes and small fixes. if you land 3 such clients that's around $900/month for just 25 hours of work. TCS and Infosys monthly salary in 25 hours.
+  
+  ## Value Based Pricing
+  
+  - you charge for value or impact of the work to the client
+  - risky model but it's the only one with the potential to make you a millionaire $ freelancer
+  - if you can increase sales of business by X then charge 10% of the X. sell $10M worth of good and become a millionaire
+  
+  ## Daily Pricing
+  
+  sometimes 1 day = 8 hours or if you have skill issues 1 day = 1 day in my words this is what I call the labour pricing model. if you're stuck working this way it's a skill issue level up your skills.
+    `,
+    publishDate: '2024-01-25',
+    readTime: 5,
+    tags: ['Freelancing', 'Pricing'],
+    featured: false,
+  },
 ];
