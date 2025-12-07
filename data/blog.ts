@@ -42,8 +42,39 @@ Till then—
 
 Keep building. Keep pushing. Things will fall into place.`,
     publishDate: '2025-01-15',
+    readTime: 7,
+    tags: ['Journey', 'freelancing', 'productivity', 'Personal'],
+    featured: true,
+  },
+  {
+    id: 'never-game-the-system',
+    title: 'Why we should never game the system.',
+    excerpt:
+      'should we do whatever it takes to succeed in our 20s, or should we make some hard calls?',
+    content: `This article is more for me than anyone else. It's mainly about how I'm planning to live my 20s—or more specifically, my life. These days, I see so many people gaming the system. But the real question is: should we do whatever it takes to succeed in our 20s, or should we make some hard calls?
+
+    There are so many people who are just “YES sir” kind of people. They'll always say yes to things, situations, or people they think can make them successful. But what they don't ask is—*is life only about success?'
+    
+    Yes, gaming the system can sometimes give you promotions, chances to climb the ladder, and even boost your ranking on the leaderboard. But over time, it destroys your self-esteem.
+    
+    I don't want my kids, my parents, my partner, and—most of all—myself to see me as a person without self-esteem.
+    
+    (Okay, let's not make this dramatic.)
+    
+    Sometimes we take ourselves too seriously—both success and failure. In fact, so many people who only know 10% of my ambition say to me: *“Sometimes your ambition feels too big. What will you do if you fail to achieve it?”* Honestly, I just laugh.
+    
+    We say “kid brain” for kids and “adult brain” for adults, but I believe 99.99% of people live life like kids. Think about it—if kids are building castles on the riverbank and a wave comes to destroy them, the kids cry. But you, as an adult, will laugh. Why? Because you know three things: first, it was just a game. Second, it wasn't a real castle. Third, the kid started with nothing and now has nothing again. Even if the wave didn't destroy the castle, sooner or later they'd have to leave it behind when going home.
+    
+    We understand this truth in small things, but we rarely apply it to life. Life is the same—we started with nothing, and we'll leave with nothing. Along the way, we build some castles. Sometimes we succeed, sometimes we fail, sometimes circumstances wipe them out. And even if we somehow manage to preserve our castles, in the end, we'll still have to leave them behind.
+    
+    Now, you might ask: if the destiny of every castle is to be destroyed, then why build them in the first place? The answer is simple: even when you know it's just a game, you still have to play. Otherwise, what will you do? How long can you just sit on the riverbank, refusing to play, simply because you know it's only a game?
+    
+    That's why, until my last breath, I'll play all the games. I'll give my 100%. I'll fight for everything that belongs to me. But deep down, I'll always know—it's just a game where the player won't be around to see the final scorecard.
+    
+    On my deathbed, I want wisdom more than anything. And self-esteem is the foundation to achieve that wisdom. That's why I'll never try to game the system.`,
+    publishDate: '2025-12-09',
     readTime: 4,
-    tags: ['Journey', 'Freelancing', 'Side Projects', 'Personal'],
+    tags: ['Journey', 'Personal'],
     featured: true,
   },
   {
