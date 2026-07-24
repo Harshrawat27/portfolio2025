@@ -1,20 +1,22 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono, Inter } from 'next/font/google';
+import { JetBrains_Mono, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/lib/ThemeProvider';
+import ClickSound from '@/components/ClickSound';
 
-// Font for code and technical elements
-const jetbrainsMono = JetBrains_Mono({
+// Serif for display and body text
+const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
-  variable: '--font-mono',
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
   display: 'swap',
 });
 
-// Font for UI and general text
-const inter = Inter({
+// Mono for meta labels, dates, and code
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -43,7 +45,6 @@ export const metadata: Metadata = {
     description:
       'Waiting for AGI | Experimenting without expectation | Self-taught | Never been to college',
   },
-  // Proper favicon configuration
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -60,31 +61,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className='font-sans min-h-screen flex flex-col relative'>
+    <html
+      lang='en'
+      className={`${sourceSerif.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className='font-serif min-h-screen flex flex-col'>
         <ThemeProvider>
-          {/* Date indicator */}
-          <div className='fixed top-4 right-4 text-xs font-mono text-[var(--text-secondary)] z-40'>
-            {new Date()
-              .toLocaleDateString('en-US', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-              })
-              .toUpperCase()}
-          </div>
-
-          {/* Main content */}
-          <main className='flex-grow container mx-auto max-w-[800px] px-4 py-8'>
+          <ClickSound />
+          <main className='flex-grow w-full mx-auto max-w-[42rem] px-6 py-8'>
             {children}
             <Analytics />
           </main>
-
-          {/* Grid decorations */}
-          <div className='grid-marker top-[25%] left-[10%]'></div>
-          <div className='grid-marker bottom-[15%] right-[10%]'></div>
-          <div className='grid-marker top-[10%] right-[30%]'></div>
-          <div className='grid-marker bottom-[30%] left-[20%] '></div>
         </ThemeProvider>
       </body>
     </html>
