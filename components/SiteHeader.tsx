@@ -21,6 +21,9 @@ export default function SiteHeader() {
         <Link href='/projects' className='ink-link'>
           Projects
         </Link>
+        <Link href='/game' className='ink-link'>
+          Play
+        </Link>
         <button
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}

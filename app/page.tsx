@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
+import HeadFollow from '@/components/HeadFollow';
 import { personalInfo, projects } from '@/data/portfolio';
 import { blogPosts } from '@/data/blog';
 
@@ -25,6 +26,11 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className='mb-24'>
+        <div className='mb-10 rise' style={{ animationDelay: '40ms' }}>
+          <div className='inline-block overflow-hidden rounded-full'>
+            <HeadFollow size={150} />
+          </div>
+        </div>
         <h1
           className='text-[2.5rem] sm:text-[3.25rem] leading-[1.1] tracking-[-0.015em] font-medium mb-8 rise'
           style={{ animationDelay: '80ms' }}
